@@ -184,7 +184,7 @@ THREE.VRControls = function ( camera, done ) {
 							.add(getUpVector().multiplyScalar( interval * this.manualMoveRate[2]));
 			}
 
-			//camera.position = camera.position.add(offset);
+			camera.position = camera.position.add(offset);
 		// }
 
 		if ( camera ) {

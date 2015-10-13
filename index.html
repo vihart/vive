@@ -76,9 +76,9 @@ It has been developed with the help of a great many people including (but not li
 
 		//Apply VR headset positional data to camera.
 		var controls = new THREE.VRControls( camera );
-		// controls.enableGamepad(false);
-		// controls.enableWASD(false);
-		// controls.enableArrows(false);
+		controls.enableGamepad(false);
+		controls.enableWASD(false);
+		controls.enableArrows(false);
 
 		//Apply VR stereo rendering to renderer
 		var effect = new THREE.VREffect( renderer );
@@ -87,11 +87,11 @@ It has been developed with the help of a great many people including (but not li
 		/*
 		Create, position, and add 3d objects
 		*/
-		var geometry = new THREE.DodecahedronGeometry(1);
+		var geometry = new THREE.DodecahedronGeometry(10);
 		var material = new THREE.MeshNormalMaterial();
 		var dodecahedron = new THREE.Mesh( geometry, material );
 
-		dodecahedron.position.z = -2;
+		dodecahedron.position.z = -20;
 		scene.add(dodecahedron);
 
 		/*
@@ -99,8 +99,8 @@ It has been developed with the help of a great many people including (but not li
 		*/
 		function animate() {
 			// Apply any desired changes for the next frame. In this case, we rotate our object.
-			dodecahedron.rotation.x += .01;
-			dodecahedron.rotation.y += .005;
+			dodecahedron.rotation.x += .003;
+			dodecahedron.rotation.y += .0008;
 
 			//Update VR headset position and apply to camera.
 			controls.update();
